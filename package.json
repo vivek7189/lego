@@ -1,0 +1,47 @@
+{
+  "name": "jobsy-recruiter",
+  "version": "1.0.0",
+  "description": "recruiter",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js ",
+    "net": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js -p --host 10.0.32.41 --port 8082",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "viv": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host 192.168.1.109 --port 8081"
+  },
+  "author": "vivek",
+  "license": "ISC",
+  "dependencies": {
+
+
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+
+
+    "react-router-dom": "^4.2.2",
+    "react-slider": "^0.9.0",
+    "react-tabs-navigation": "^0.4.4",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "strophe.js": "^1.2.14"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}

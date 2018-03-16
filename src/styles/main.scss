@@ -1,0 +1,30 @@
+
+body{
+  font-size:16px;
+}
+
+
+.main-wrapper {
+  background-color:#f47d31;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position:-220px 50%;
+  .main-container{
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+}
+
+.container{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  position: relative;
+  top: -65px;
+}
+.content{
+  margin: 10% 5% 5% 15%;
+  min-height: 60vh;
+}
