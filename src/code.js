@@ -1,5 +1,20 @@
 var sortedArr=[2,3,5,6,7,8,9,10,11];
+function Bnode(data){
+        this.left=this.right=null;
+        this.data=data;
+}
+var Btree= function(){
+    this.root=null;
+}
 
+var bt1=new Btree();
+bt1.root=new Bnode(10);
+bt1.root.left=new Bnode(-2);
+bt1.root.right=new Bnode(7);
+bt1.root.left.left=new Bnode(8);
+//bt1.root.left.left.left=new Bnode(8);
+bt1.root.left.right=new Bnode(-4);
+var maxres=0;
 var binaryTree= function(){
     var root;
     return{
@@ -101,17 +116,50 @@ var binaryTree= function(){
 
                }
            }
+       },
+       getHeightBST(root){
+           var node=root;
+        if(node === null){
+                return 0;
+        }else{
+            let leftHeight=this.getHeightBST(node.left);
+            let rightheight=this.getHeightBST(node.right);
+
+            return (1+ (Math.max(leftHeight,rightheight)))
+        }
+       },
+       maxSumPathBst(node){
+           
+           if(node === null){
+                    return 0;
+           }else{
+               console.log('L',node.data);
+               let left= this.maxSumPathBst(node.left)
+                console.log("R",node.data);
+               let right= this.maxSumPathBst(node.right)
+                
+               let max_single=Math.max(Math.max(left,right)+node.data, node.data);
+                let max_top=Math.max(left + right + node.data,max_single);
+                
+                maxres=Math.max(maxres,max_top);
+               console.log("max max_single",max_top);
+               return max_single
+           }
        }
+       
     }
 }
 var Node=binaryTree().makeBST(sortedArr,0,sortedArr.length);
 console.log(binaryTree().makeBST(sortedArr,0,sortedArr.length));
+
 //console.log(binaryTree().findMinDepthBst(Node));
 
 //console.log(binaryTree().levelOrderTraversal(Node));
 //console.log(binaryTree().printSpiralBST(Node));
-console.log(binaryTree().printVerticalPath(Node));
+//console.log(binaryTree().printVerticalPath(Node));
 
+console.log("binary tree height",+binaryTree().maxSumPathBst(bt1.root));
+console.log('final maxres',maxres);
 //find subarray for specific sum
 
 function findSubArrayToSum(arr,sum){
