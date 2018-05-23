@@ -449,7 +449,7 @@ function heap(arr){
     }
 
     for(let j=arrLn-1;j>=0;j--){
-            let temp=arr[i]
+            let temp=arr[j]
             heapify(arr,j,0)
     }
     console.log("hep",arr);
@@ -479,7 +479,8 @@ function heapify(arr,n,i){
 }
 heap(arr9);
 
-let arr11=[100, 180, 260, 310, 40, 535, 695];
+//let arr11=[100, 180, 260, 310, 40, 535, 695];
+let arr11=[100, 2, 1, 310, 40, 535, 695];
 
 function profiteSellmax(arr){
     console.log("");
@@ -487,14 +488,41 @@ function profiteSellmax(arr){
     let count=0;
     let i=0;
     while(i<arrLen-1){
-            while(0){
+        while(arr[i]>arr[i+1]){
+            i++
+        }
+        console.log("min ",i);
 
-            }
-    }
+        while(arr[i]<arr[i+1]){
+            i++
+        }
+        console.log("max",i);
+        }
+        i++
 }
 profiteSellmax(arr11);
 
 
+let arr12=[7,4,2,-3,-4,2,];
+
+function subArrayWithSumZero(arr){
+        if(!arr.length){
+            console.log("no subarray with sum equal to zero");
+        }
+        let sumObj={};
+        let sum=arr[0];
+        for(let j=1;j<arr.length;j++){
+            sumObj[sum]=true;
+            sum=sum+arr[j];
+           
+                if(sum === 0 || arr[j]===0 || sumObj[sum] === true){
+                    console.log("zero sum sub array exist");
+                }
+                
+        }
+
+}
+subArrayWithSumZero(arr12);
 
 
 
